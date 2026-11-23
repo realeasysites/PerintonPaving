@@ -1,7 +1,7 @@
 (function () {
   // ---- Social links: fill in when the client confirms their pages. Empty = hidden.
   var SOCIAL = {
-    facebook: '',
+    facebook: 'https://www.facebook.com/perintonpaving',
     instagram: '',
     google: 'https://share.google/epoMA2CxWPHihWneB' // Google Business Profile
   };
@@ -98,6 +98,28 @@
     vids.forEach(function (v) { v.muted = true; io.observe(v); });
   } else {
     vids.forEach(function (v) { v.src = v.dataset.src; v.controls = true; });
+  }
+
+  // ---- Live Facebook feed (official Page Plugin), loaded when scrolled near
+  var fb = document.getElementById('fbFeed');
+  function loadFb() {
+    if (!fb || fb.dataset.loaded) return;
+    fb.dataset.loaded = '1';
+    var w = Math.min(500, Math.max(280, Math.floor(fb.clientWidth || 500)));
+    var f = document.createElement('iframe');
+    f.title = 'Perinton Paving on Facebook';
+    f.width = w; f.height = 560; f.loading = 'lazy';
+    f.setAttribute('allow', 'encrypted-media');
+    f.src = 'https://www.facebook.com/plugins/page.php?href=' + encodeURIComponent(fb.dataset.page) +
+      '&tabs=timeline&width=' + w + '&height=560&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false';
+    fb.appendChild(f);
+  }
+  if (fb) {
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en, obs) {
+        if (en[0].isIntersecting) { loadFb(); obs.disconnect(); }
+      }, { rootMargin: '400px' }).observe(fb);
+    } else { loadFb(); }
   }
 
   // ---- Quote form
