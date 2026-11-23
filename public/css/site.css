@@ -159,6 +159,8 @@ h1,h2,h3,h4{line-height:1.08;margin:0;letter-spacing:-.01em}
 .area h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;margin-bottom:1rem}
 .area__copy>p:not(.eyebrow){color:var(--muted)}
 .towns{list-style:none;padding:0;margin:1.4rem 0;display:flex;flex-wrap:wrap;gap:.5rem}
+.towns--counties{margin-bottom:.4rem!important}
+.towns--counties li{background:var(--green)!important;color:#fff;border-color:var(--green)!important}
 .towns li{background:#fff;border:1px solid var(--line);padding:.35rem .8rem;border-radius:999px;font-weight:600;font-size:.9rem}
 .hours{display:grid;gap:0;border-top:1px solid var(--line)}
 .hours div{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
