@@ -3,7 +3,7 @@
   var SOCIAL = {
     facebook: '',
     instagram: '',
-    google: '' // Google Business Profile / reviews link
+    google: 'https://share.google/epoMA2CxWPHihWneB' // Google Business Profile
   };
   var ICONS = {
     facebook: '<path d="M14 8V6.5c0-.7.5-1 1-1h2V2h-3c-3 0-4 2-4 4.5V8H8v3.5h2V22h4V11.5h2.7l.3-3.5z"/>',

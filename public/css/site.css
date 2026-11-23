@@ -175,6 +175,8 @@ h1,h2,h3,h4{line-height:1.08;margin:0;letter-spacing:-.01em}
 .hours div{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
 .hours span{color:var(--muted)}
 .hours b{text-align:right}
+.glink{color:var(--green);text-decoration:none}
+.glink:hover{color:var(--orange-d)}
 .area__map{border-radius:10px;overflow:hidden;border:1px solid var(--line);height:440px;background:#ddd}
 .area__map iframe{width:100%;height:100%;border:0}
 
