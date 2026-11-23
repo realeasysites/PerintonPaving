@@ -1,0 +1,18 @@
+{
+  "name": "perinton-paving",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Perinton Paving Inc. — website + quote request backend (Real Easy Sites)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.21.0",
+    "nodemailer": "^6.9.15"
+  }
+}
