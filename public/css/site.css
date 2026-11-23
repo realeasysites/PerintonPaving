@@ -104,10 +104,10 @@ h1,h2,h3,h4{line-height:1.08;margin:0;letter-spacing:-.01em}
 .more{margin-top:56px}
 .more__h{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:900;margin-bottom:1.4rem}
 .more__h span{color:var(--muted);font-weight:600}
-.more__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.more__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .mcard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .mcard:hover{transform:translateY(-3px);box-shadow:0 18px 36px -22px rgba(0,0,0,.35)}
-.mcard img{height:170px;width:100%;object-fit:cover}
+.mcard img{height:220px;width:100%;object-fit:cover}
 .mcard div{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
 .mcard h4{font-size:1.2rem;font-weight:900;margin-bottom:.4rem}
 .mcard p{color:var(--muted);margin:0 0 1rem;font-size:.95rem;flex:1}
