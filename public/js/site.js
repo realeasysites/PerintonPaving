@@ -83,6 +83,23 @@
     if (e.key === 'ArrowRight') show(idx + 1);
   });
 
+  // ---- Muted job-site videos: load and play only when on screen
+  var vids = document.querySelectorAll('video[data-src]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting) {
+          if (!v.src) { v.src = v.dataset.src; }
+          var p = v.play(); if (p && p.catch) p.catch(function () {});
+        } else { v.pause(); }
+      });
+    }, { threshold: 0.25 });
+    vids.forEach(function (v) { v.muted = true; io.observe(v); });
+  } else {
+    vids.forEach(function (v) { v.src = v.dataset.src; v.controls = true; });
+  }
+
   // ---- Quote form
   var form = document.getElementById('quoteForm');
   var msg = document.getElementById('formMsg');
