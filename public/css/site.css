@@ -213,6 +213,8 @@ h1,h2,h3,h4{line-height:1.08;margin:0;letter-spacing:-.01em}
 .chips span{display:inline-block;padding:.55rem .9rem;border:1.5px solid #cfcac1;border-radius:999px;font-weight:600;cursor:pointer;font-size:.9rem}
 .chips input:checked+span{background:var(--green);border-color:var(--green);color:#fff}
 .chips input:focus-visible+span{outline:3px solid var(--orange);outline-offset:2px}
+.form__sub{margin:6px 0 -4px;font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--green)}
+.estimate__fit{background:rgba(255,255,255,.08);border-left:4px solid var(--orange);padding:10px 14px;border-radius:0 6px 6px 0}
 .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
 .form__msg{margin:0;font-weight:700;min-height:1.2em}
 .form__msg.ok{color:var(--green)}

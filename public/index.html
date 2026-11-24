@@ -323,6 +323,7 @@
     <aside class="estimate__side">
       <p class="eyebrow eyebrow--light">Free estimate</p>
       <h2>Let's take a look at your driveway.</h2>
+      <p class="estimate__fit"><b>Smaller driveways are welcome in the Fairport area.</b> Farther out, we focus on new builds, estate driveways, commercial lots and courts.</p>
       <p>Tell us a little about the job and we'll set up a free on-site estimate. Estimates are done by longtime members of our crew who know blacktop inside and out, not a salesman. Prefer the phone? We pick up.</p>
       <a href="tel:+15853881090" class="bigtel">585-388-1090</a>
       <ul class="estimate__promise">
@@ -338,9 +339,63 @@
         <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
       </div>
       <label>Email <small>(optional)</small><input name="email" type="email" autocomplete="email"></label>
+      <fieldset class="chips">
+        <legend>Who's the work for?</legend>
+        <label><input type="radio" name="client_type" value="Homeowner" checked><span>Homeowner</span></label>
+        <label><input type="radio" name="client_type" value="Builder or contractor"><span>Builder / contractor</span></label>
+        <label><input type="radio" name="client_type" value="Commercial property"><span>Commercial property</span></label>
+        <label><input type="radio" name="client_type" value="Town, HOA or club"><span>Town, HOA or club</span></label>
+      </fieldset>
       <div class="form__row">
-        <label>Street address<input name="address" autocomplete="street-address"></label>
-        <label>Town<input name="town" autocomplete="address-level2" placeholder="e.g. Fairport"></label>
+        <label>Job address<input name="address" autocomplete="street-address"></label>
+        <label>Town
+          <select name="town" required>
+            <option value="">Pick the town</option>
+            <optgroup label="Fairport area">
+              <option>Fairport</option>
+              <option>Perinton</option>
+              <option>Pittsford</option>
+              <option>Penfield</option>
+              <option>East Rochester</option>
+              <option>Victor</option>
+              <option>Macedon</option>
+              <option>Brighton</option>
+            </optgroup>
+            <optgroup label="Greater Rochester">
+              <option>Rochester</option>
+              <option>Webster</option>
+              <option>Henrietta</option>
+              <option>Irondequoit</option>
+              <option>Greece</option>
+              <option>Gates</option>
+              <option>Chili</option>
+              <option>Mendon</option>
+              <option>Honeoye Falls</option>
+              <option>Rush</option>
+            </optgroup>
+            <optgroup label="Ontario County">
+              <option>Canandaigua</option>
+              <option>Farmington</option>
+              <option>Bristol</option>
+              <option>Bloomfield</option>
+              <option>Geneva</option>
+              <option>Manchester</option>
+              <option>Shortsville</option>
+              <option>Naples</option>
+            </optgroup>
+            <optgroup label="Wayne County">
+              <option>Walworth</option>
+              <option>Ontario</option>
+              <option>Palmyra</option>
+              <option>Williamson</option>
+              <option>Marion</option>
+              <option>Newark</option>
+              <option>Lyons</option>
+              <option>Sodus</option>
+            </optgroup>
+            <option>Other town</option>
+          </select>
+        </label>
       </div>
       <fieldset class="chips">
         <legend>What do you need?</legend>
@@ -348,19 +403,63 @@
         <label><input type="radio" name="service" value="Residential driveway"><span>Driveway replacement</span></label>
         <label><input type="radio" name="service" value="Top coating"><span>Top coating</span></label>
         <label><input type="radio" name="service" value="Patching / repairs"><span>Patching / repairs</span></label>
-        <label><input type="radio" name="service" value="Commercial blacktop"><span>Commercial</span></label>
+        <label><input type="radio" name="service" value="Commercial blacktop"><span>Commercial lot</span></label>
         <label><input type="radio" name="service" value="Pickleball court"><span>Pickleball court</span></label>
-        <label><input type="radio" name="service" value="Not sure"><span>Not sure yet</span></label>
       </fieldset>
+      <p class="form__sub">About the site</p>
       <div class="form__row">
-        <label>Rough size
+        <label>Driveway length
           <select name="size">
             <option value="">Pick one</option>
-            <option>Single-car / short</option>
-            <option>Two-car / standard</option>
-            <option>Long or circle drive</option>
-            <option>Lot / commercial area</option>
+            <option>Under 50 ft</option>
+            <option>50–100 ft</option>
+            <option>100–250 ft</option>
+            <option>250+ ft (estate / long drive)</option>
+            <option>Parking lot or court</option>
             <option>Not sure</option>
+          </select>
+        </label>
+        <label>Slope
+          <select name="grade">
+            <option value="">Pick one</option>
+            <option>Flat</option>
+            <option>Gentle slope</option>
+            <option>Steep hill</option>
+            <option>Not sure</option>
+          </select>
+        </label>
+      </div>
+      <div class="form__row">
+        <label>The driveway is off a…
+          <select name="access">
+            <option value="">Pick one</option>
+            <option>Quiet residential street</option>
+            <option>Busy road</option>
+            <option>Highway or main-road frontage</option>
+            <option>Long private lane</option>
+            <option>Tight access (narrow, wires, trees)</option>
+          </select>
+        </label>
+        <label>What's there now?
+          <select name="surface">
+            <option value="">Pick one</option>
+            <option>Gravel or dirt</option>
+            <option>Old blacktop</option>
+            <option>Concrete</option>
+            <option>Nothing yet (new build)</option>
+          </select>
+        </label>
+      </div>
+      <div class="form__row">
+        <label>Rough budget
+          <select name="budget">
+            <option value="">Pick one</option>
+            <option>Under $5k</option>
+            <option>$5k–$10k</option>
+            <option>$10k–$20k</option>
+            <option>$20k–$50k</option>
+            <option>$50k+</option>
+            <option>Not sure yet</option>
           </select>
         </label>
         <label>When are you hoping to pave?
@@ -373,7 +472,7 @@
           </select>
         </label>
       </div>
-      <label>Anything else? <small>(optional)</small><textarea name="message" rows="4" placeholder="Current condition, access, anything we should know"></textarea></label>
+      <label>Anything else? <small>(optional)</small><textarea name="message" rows="3" placeholder="Width, drainage, anything we should know"></textarea></label>
       <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
       <button type="submit" class="btn btn--orange btn--block">Request my free estimate</button>
       <p class="form__msg" id="formMsg" role="alert"></p>

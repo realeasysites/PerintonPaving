@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('../lib/db');
+const { scoreLead } = require('../lib/score');
 const { notifyNewQuote } = require('../lib/mailer');
 
 const router = express.Router();
@@ -30,7 +31,12 @@ router.post('/quote', async (req, res) => {
     service: clean(b.service, 80),
     size: clean(b.size, 80),
     timing: clean(b.timing, 80),
-    message: clean(b.message, 2000)
+    message: clean(b.message, 2000),
+    client_type: clean(b.client_type, 80),
+    grade: clean(b.grade, 80),
+    access: clean(b.access, 80),
+    surface: clean(b.surface, 80),
+    budget: clean(b.budget, 80)
   };
 
   if (!q.name || !q.phone) {
@@ -42,9 +48,20 @@ router.post('/quote', async (req, res) => {
   if (q.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(q.email)) {
     return res.status(400).json({ ok: false, error: 'That email address looks off.' });
   }
+  if (!q.town) {
+    return res.status(400).json({ ok: false, error: 'Please pick the town the job is in.' });
+  }
+
+  const s = scoreLead(q);
+  q.tier = s.tier;
+  q.zone = s.zone;
+  q.reasons = s.reasons.join(' · ');
+  q.flags = s.flags.join(', ');
 
   db.addQuote(q);
-  notifyNewQuote(q);
+  // Only priority and close-to-home requests email the owner. Small jobs far away
+  // are still saved in the dashboard, just quietly.
+  if (q.tier !== 'low') notifyNewQuote(q);
   res.json({ ok: true });
 });
 

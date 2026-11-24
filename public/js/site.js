@@ -134,6 +134,11 @@
       msg.textContent = 'Please add your name and phone number.';
       return;
     }
+    if (!data.town) {
+      msg.className = 'form__msg err';
+      msg.textContent = 'Please pick the town the job is in.';
+      return;
+    }
     var btn = form.querySelector('button[type="submit"]');
     btn.disabled = true; btn.textContent = 'Sending…';
     fetch('/api/quote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
